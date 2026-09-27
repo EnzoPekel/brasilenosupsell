@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oferta Especial Exclusiva - Upsell</title>
+  <!-- Google Fonts: Inter & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #10b981; /* Verde conversão */
+      --primary-hover: #059669;
+      --accent-color: #ef4444; /* Vermelho alerta */
+      --bg-dark: #0f172a;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f8fafc;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Barra de Alerta Superior */
+    .top-banner {
+      background: #fef2f2;
+      border-bottom: 2px solid #fecaca;
+      color: #991b1b;
+      padding: 12px 16px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .top-banner span {
+      background: #ef4444;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-right: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 20px 60px 20px;
+    }
+
+    /* Cabeçalho / Headline */
+    .header-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .progress-bar-container {
+      background: #e2e8f0;
+      border-radius: 999px;
+      height: 10px;
+      max-width: 380px;
+      margin: 0 auto 20px auto;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      background: linear-gradient(90deg, #f59e0b, #10b981);
+      width: 80%;
+      height: 100%;
+      border-radius: 999px;
+    }
+
+    .progress-text {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 8px;
+    }
+
+    .headline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1.25;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+
+    .headline mark {
+      background: transparent;
+      color: #dc2626;
+    }
+
+    .subheadline {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Card Principal */
+    .main-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      padding: 32px;
+      margin-bottom: 30px;
+    }
+
+    /* Mockup / Imagem do Produto */
+    .product-mockup {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .product-badge {
+      display: inline-block;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 12px;
+    }
+
+    /* Lista de Benefícios */
+    .benefits-list {
+      list-style: none;
+      margin: 24px 0;
+    }
+
+    .benefits-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+      color: #334155;
+    }
+
+    .benefits-list li svg {
+      width: 22px;
+      height: 22px;
+      fill: #10b981;
+      margin-right: 12px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Preço */
+    .price-box {
+      text-align: center;
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 28px 0;
+    }
+
+    .price-old {
+      font-size: 1rem;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+
+    .price-new {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #0f172a;
+      margin: 4px 0;
+    }
+
+    .price-sub {
+      font-size: 0.9rem;
+      color: #10b981;
+      font-weight: 600;
+    }
+
+    /* Botão Hotmart (CTA Principal) */
+    .cta-container {
+      text-align: center;
+      margin: 28px 0 16px 0;
+    }
+
+    .hotmart-button {
+      display: block;
+      width: 100%;
+      background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      padding: 20px 24px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(16, 185, 129, 0.35);
+      transition: all 0.2s ease-in-out;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      border: none;
+      animation: pulse 2s infinite;
+    }
+
+    .hotmart-button:hover {
+      background: linear-gradient(180deg, #059669 0%, #047857 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(16, 185, 129, 0.45);
+    }
+
+    .hotmart-subtext {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 14px rgba(16, 185, 129, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
+    }
+
+    /* Link de Recusa (Downsell / Skip) */
+    .decline-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .decline-link a {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+
+    .decline-link a:hover {
+      color: #64748b;
+    }
+
+    /* Selos de Garantia e Segurança */
+    .guarantee-box {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #f1f5f9;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 28px;
+    }
+
+    .guarantee-icon {
+      font-size: 2.2rem;
+    }
+
+    .guarantee-text h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .guarantee-text p {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      .headline {
+        font-size: 1.55rem;
+      }
+      .subheadline {
+        font-size: 1rem;
+      }
+      .hotmart-button {
+        font-size: 1.1rem;
+        padding: 18px 16px;
+      }
+      .main-card {
+        padding: 20px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Alerta de Atenção Topo -->
+  <aside class="top-banner" aria-label="Aviso de pedido em andamento">
+    <span>⚠️ ATENÇÃO</span> Não feche esta página! Seu pedido principal já foi confirmado, mas temos algo especial...
+  </aside>
+
+  <main class="container">
+    
+    <!-- Cabeçalho & Progresso -->
+    <header class="header-section">
+      <p class="progress-text">Etapa 2 de 2: Personalização do seu pedido (80% Concluído)</p>
+      <div class="progress-bar-container" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar-fill"></div>
+      </div>
+
+      <!-- Headline Principal -->
+      <h1 class="headline">
+        Espere! Gostaria de <mark>Acelerar seus Resultados em até 3x</mark> com este Pacote Exclusivo?
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="subheadline">
+        Esta é uma oportunidade única liberada apenas nesta página. Adicione este complemento ao seu pedido com <strong>60% de desconto imediato</strong>.
+      </p>
+    </header>
+
+    <!-- Card de Oferta do Upsell -->
+    <article class="main-card">
+      
+      <div class="product-mockup">
+        <span class="product-badge">⚡ OFERTA EXCLUSIVA DE UPGRADE</span>
+        <!-- Você pode trocar pelo nome do seu treinamento / produto de upsell -->
+        <h2 style="font-size: 1.4rem; color: #0f172a; margin-top: 8px;">Acelerador VIP de Implementação Prática</h2>
+      </div>
+
+      <!-- Benefícios em Bullets -->
+      <ul class="benefits-list">
+        <li>
+          <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+          <span><strong>Templates Prontos para Copiar e Colar:</strong> Economize semanas de trabalho e implemente tudo em minutos.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+          <span><strong>Plano de Ação Passo a Passo:</strong> O roteiro diário exato para não travar em nenhuma etapa.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+          <span><strong>Acesso Prioritário & Vitalício:</strong> Atualizações garantidas sem mensalidades futuras.</span>
+        </li>
+      </ul>
+
+      <!-- Preço Promocional de Upsell -->
+      <section class="price-box" aria-label="Preço do produto">
+        <p class="price-old">De R$ 297,00 por apenas</p>
+        <p class="price-new">R$ 97,00</p>
+        <p class="price-sub">ou em até 12x no cartão de crédito</p>
+      </section>
+
+      <!-- BOTÃO DE COMPRA HOTMART (CTA) -->
+      <section class="cta-container">
+        <!-- 
+          INSTRUÇÕES HOTMART:
+          1. Substitua o link abaixo pelo seu link de checkout da Hotmart (com parâmetro de upsell com 1 clique se aplicável).
+          Exemplo: https://pay.hotmart.com/SEU_CODIGO_AQUI?checkoutMode=10
+        -->
+        <a 
+          href="https://pay.hotmart.com/SEU_LINK_AQUI" 
+          class="hotmart-button"
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          👉 SIM! QUERO APROVEITAR ESSA OFERTA ÚNICA
+        </a>
+
+        <p class="hotmart-subtext">
+          🔒 Pagamento 100% Seguro via Hotmart • Acesso Imediato
+        </p>
+      </section>
+
+      <!-- Selo de Garantia -->
+      <div class="guarantee-box">
+        <div class="guarantee-icon">🛡️</div>
+        <div class="guarantee-text">
+          <h4>Garantia Incondicional de 7 Dias</h4>
+          <p>Se você achar que este material não agregou valor, devolvemos 100% do seu dinheiro sem perguntas.</p>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- Link de Recusa (Downsell / Prosseguir sem o item) -->
+    <div class="decline-link">
+      <a href="#">
+        Não, obrigado. Prefiro abrir mão deste desconto exclusivo e ir direto para o meu pedido principal.
+      </a>
+    </div>
+
+  </main>
+
+</body>
+</html>
